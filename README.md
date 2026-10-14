@@ -1,11 +1,5 @@
-# OpenClip Studio roadmap
+# Roadmap source moved
 
-The public milestone roadmap is intended for [itopsreborn.github.io/openclip-studio.github.io](https://itopsreborn.github.io/openclip-studio.github.io/).
+The canonical visual roadmap has moved into the [`docs/roadmap`](https://github.com/ITOpsReborn/openclip-studio/tree/main/docs/roadmap) directory of the main [OpenClip Studio repository](https://github.com/ITOpsReborn/openclip-studio).
 
-Milestone definitions, roadmap status, and the north-star goal live in [`roadmap.json`](roadmap.json); the website renders that file into the visual roadmap. Statuses describe delivered implementation separately from hardware or end-to-end validation. Timing labels show sequencing only: no calendar delivery dates have been committed.
-
-To publish this static site, enable GitHub Pages in the repository settings and select **Deploy from a branch**, branch `main`, folder `/(root)`.
-
-OpenClip Studio is a local-first, self-hosted, open-source AI video clipping and short-form content generation platform optimized for Intel Arc GPUs. Runtime AI processing is designed to remain local; optional social publishing uses external platform APIs.
-
-See the [main project repository](https://github.com/ITOpsReborn/openclip-studio) and its [Apache License](LICENSE).
+The GitHub Pages address is [itopsreborn.github.io/openclip-studio/roadmap](https://itopsreborn.github.io/openclip-studio/roadmap/), pending Pages configuration in the main repository. This repository remains as a pointer to the new source; roadmap updates should be made in the main repository.
