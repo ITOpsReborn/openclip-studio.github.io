@@ -7,6 +7,7 @@ const statusInfo = {
 const list = document.querySelector("#milestone-list");
 const summary = document.querySelector("#status-summary");
 const sequenceFill = document.querySelector("#sequence-fill");
+const northStar = document.querySelector("#north-star");
 const filters = [...document.querySelectorAll("[data-filter]")];
 let milestones = [];
 let activeFilter = "all";
@@ -154,10 +155,19 @@ fetch("roadmap.json")
     return response.json();
   })
   .then((data) => {
-    if (!Array.isArray(data.milestones) || data.milestones.length === 0) {
+    if (
+      !Array.isArray(data.milestones)
+      || data.milestones.length === 0
+      || !data.north_star?.title
+      || !data.north_star?.description
+    ) {
       throw new Error("Roadmap data is empty");
     }
     milestones = data.milestones;
+    northStar.append(
+      makeElement("span", "north-star-label", data.north_star.title),
+      makeElement("p", "north-star-description", data.north_star.description),
+    );
     renderSummary(milestones);
     renderMilestones();
   })

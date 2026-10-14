@@ -2,7 +2,7 @@
 
 The public milestone roadmap is intended for [itopsreborn.github.io/openclip-studio.github.io](https://itopsreborn.github.io/openclip-studio.github.io/).
 
-Milestone definitions and roadmap status live in [`roadmap.json`](roadmap.json); the website renders that file into the visual roadmap. Statuses describe delivered implementation separately from hardware or end-to-end validation. Timing labels show sequencing only: no calendar delivery dates have been committed.
+Milestone definitions, roadmap status, and the north-star goal live in [`roadmap.json`](roadmap.json); the website renders that file into the visual roadmap. Statuses describe delivered implementation separately from hardware or end-to-end validation. Timing labels show sequencing only: no calendar delivery dates have been committed.
 
 To publish this static site, enable GitHub Pages in the repository settings and select **Deploy from a branch**, branch `main`, folder `/(root)`.
 

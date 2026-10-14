@@ -1,4 +1,8 @@
 {
+  "north_star": {
+    "title": "The north star",
+    "description": "Analyze a podcast, generate clips, thumbnails, titles, and descriptions, publish to YouTube, TikTok, and Instagram, and report performance metrics locally on Intel Arc hardware."
+  },
   "milestones": [
     {
       "phase": 0,
