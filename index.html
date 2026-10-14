@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101716">
+    <meta name="description" content="OpenClip Studio delivery roadmap: what is delivered, in progress, and coming next.">
+    <title>OpenClip Studio — Roadmap</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="roadmap.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#roadmap">Skip to roadmap</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="OpenClip Studio roadmap home">
+        <span class="brand-mark" aria-hidden="true">OC</span>
+        <span>OpenClip <span class="brand-light">Studio</span></span>
+      </a>
+      <a class="repo-link" href="https://github.com/ITOpsReborn/openclip-studio">
+        <span>Project repository</span>
+        <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M4 2h10v10h-2V5.4l-8 8L2.6 12l8-8H4z"/></svg>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse-dot"></span> Local-first AI video production</p>
+          <h1 id="page-title">A clear view of<br><span>what’s next.</span></h1>
+          <p class="hero-description">The OpenClip Studio roadmap tracks delivered capabilities, active work, and the milestones ahead—built for a self-hosted Intel Arc workstation.</p>
+          <p class="date-note"><span aria-hidden="true">◷</span> Sequence is visible; calendar dates are not committed.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-outer"></div>
+          <div class="orbit orbit-inner"></div>
+          <div class="art-core"><span>OC</span></div>
+          <span class="orbit-node node-one"></span>
+          <span class="orbit-node node-two"></span>
+          <span class="orbit-node node-three"></span>
+          <span class="art-label label-one">INGEST</span>
+          <span class="art-label label-two">ANALYZE</span>
+          <span class="art-label label-three">CREATE</span>
+        </div>
+      </section>
+
+      <section class="overview" aria-label="Roadmap status summary">
+        <div class="overview-heading">
+          <div>
+            <p class="eyebrow">Delivery snapshot</p>
+            <h2>Progress, without guesswork</h2>
+          </div>
+          <p class="overview-note">Implementation status is separate from runtime and hardware acceptance.</p>
+        </div>
+        <div class="status-summary" id="status-summary" aria-live="polite"></div>
+        <div class="sequence-strip" aria-label="Milestone sequence">
+          <div class="sequence-line"><span id="sequence-fill"></span></div>
+          <div class="sequence-labels"><span>Delivered</span><span>In progress</span><span>Coming up</span></div>
+        </div>
+      </section>
+
+      <section class="roadmap-section" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="roadmap-heading">
+          <div>
+            <p class="eyebrow">Milestone map <span class="eyebrow-rule"></span> 15 phases</p>
+            <h2 id="roadmap-title">From local foundation to creator workflow</h2>
+            <p class="section-description">Follow the sequence from the runnable core to automated, publish-ready content.</p>
+          </div>
+          <nav class="filters" aria-label="Filter milestones">
+            <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">All <span data-count="all"></span></button>
+            <button class="filter-button" type="button" data-filter="delivered" aria-pressed="false"><span class="filter-dot dot-delivered"></span> Delivered <span data-count="delivered"></span></button>
+            <button class="filter-button" type="button" data-filter="in_progress" aria-pressed="false"><span class="filter-dot dot-progress"></span> In progress <span data-count="in_progress"></span></button>
+            <button class="filter-button" type="button" data-filter="upcoming" aria-pressed="false"><span class="filter-dot dot-upcoming"></span> Coming up <span data-count="upcoming"></span></button>
+          </nav>
+        </div>
+        <div class="roadmap" id="milestone-list" aria-live="polite" aria-busy="true">
+          <p class="loading">Loading milestone data…</p>
+        </div>
+        <p class="roadmap-footnote"><span class="footnote-icon" aria-hidden="true">i</span> “Now”, “Next”, and “Later” indicate intended order, not promised dates. A milestone is only marked delivered when its implementation is present; notes call out any inference or hardware validation still outstanding.</p>
+        <aside class="north-star" id="north-star" aria-labelledby="north-star-title"></aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="./">
+        <span class="brand-mark" aria-hidden="true">OC</span>
+        <span>OpenClip <span class="brand-light">Studio</span></span>
+      </a>
+      <p>Local by design. Built in the open.</p>
+      <a href="https://github.com/ITOpsReborn/openclip-studio">Explore the source <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
