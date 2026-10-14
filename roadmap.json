@@ -1,0 +1,201 @@
+{
+  "milestones": [
+    {
+      "phase": 0,
+      "title": "Infrastructure foundation",
+      "status": "delivered",
+      "timing": "Delivered",
+      "objective": "Create a reproducible local development environment.",
+      "deliverables": [
+        "Docker Compose services for PostgreSQL, Redis, MinIO, Qdrant, and Temporal",
+        "FastAPI gateway with health, readiness, and metrics",
+        "Prometheus and Grafana observability foundation"
+      ],
+      "acceptance": [
+        "A developer can deploy the complete stack in under 15 minutes."
+      ],
+      "validation": "Foundation implementation is delivered. The fresh-clone deployment-time target has not been measured on the target workstation."
+    },
+    {
+      "phase": 1,
+      "title": "AI runtime validation",
+      "status": "in_progress",
+      "timing": "Now",
+      "objective": "Prove local AI inference works on the target Windows 11, WSL2, and Intel Arc workstation.",
+      "deliverables": [
+        "OpenVINO Whisper runtime configuration with Intel Arc GPU access",
+        "Local llama.cpp connectivity and runtime diagnostics",
+        "Verified GPU and model-backed inference on the target workstation"
+      ],
+      "validation": "Runtime configuration and diagnostics are implemented. Real Whisper inference, llama.cpp generation, and Intel Arc GPU acceleration have not yet been verified.",
+      "acceptance": [
+        "On Windows 11, verify the integrated Ubuntu environment exposes /dev/dxg and /usr/lib/wsl and that Docker Desktop uses its WSL2 backend.",
+        "Place a locally converted OpenVINO Whisper model, including .xml/.bin weights and processor/tokenizer files, in ./models/whisper-openvino. Runtime model downloads are not used.",
+        "Run docker compose up -d --build; check /runtime and confirm OpenVINO Core lists GPU inside the transcription container.",
+        "Confirm the container can reach the Windows-hosted llama.cpp endpoint at http://host.docker.internal:8080/v1/models.",
+        "Transcribe a known short media fixture on GPU, compare against a reviewed reference, record latency, then compare with CPU.",
+        "Analyze the persisted transcript and confirm ranked moments and job results survive a transcription-service restart."
+      ]
+    },
+    {
+      "phase": 2,
+      "title": "First video ingestion",
+      "status": "delivered",
+      "timing": "Delivered",
+      "objective": "Upload and process local video.",
+      "deliverables": [
+        "Local video upload with size and filename checks",
+        "ffprobe metadata extraction",
+        "MinIO media storage and PostgreSQL video and ingestion-job records"
+      ],
+      "validation": "Ingestion was exercised with a generated MP4; metadata, database records, and object storage were verified."
+    },
+    {
+      "phase": 3,
+      "title": "First transcript",
+      "status": "delivered",
+      "timing": "Delivered",
+      "objective": "Transcribe media locally and persist timestamped subtitles.",
+      "deliverables": [
+        "Offline faster-whisper transcription using preinstalled local model weights",
+        "Persistent, restart-recoverable transcription jobs",
+        "Language metadata, timestamped transcript segments, and downloadable SRT subtitles"
+      ],
+      "validation": "The transcription service and persistence/retrieval paths are implemented and tested with a mocked transcript. Real Whisper inference and transcript accuracy remain unverified."
+    },
+    {
+      "phase": 4,
+      "title": "First AI analysis",
+      "status": "in_progress",
+      "timing": "Now",
+      "objective": "Find compelling moments in a transcript using a local LLM.",
+      "deliverables": [
+        "Timestamp-preserving transcript chunking with overlap",
+        "Local llama.cpp moment suggestions with validated JSON and confidence scores",
+        "Ranked moment results and durable, restart-recoverable analysis jobs"
+      ],
+      "validation": "Implementation and mocked API/data tests are present. Live llama.cpp generation and the usefulness of the resulting moments have not been validated."
+    },
+    {
+      "phase": 5,
+      "title": "First automated clip",
+      "status": "upcoming",
+      "timing": "Next",
+      "objective": "Generate the first vertical short.",
+      "deliverables": [
+        "Select an analyzed moment and cut source media to its time range",
+        "Render a vertical 9:16 clip with captions",
+        "Produce a thumbnail for the generated short"
+      ]
+    },
+    {
+      "phase": 6,
+      "title": "First end-to-end video",
+      "status": "upcoming",
+      "timing": "Later",
+      "objective": "Go from local upload to a publish-ready short automatically.",
+      "deliverables": [
+        "Connect ingestion, transcription, moment analysis, clip rendering, captions, and thumbnails",
+        "Track and recover end-to-end workflow jobs",
+        "Review and export a complete generated short locally"
+      ]
+    },
+    {
+      "phase": 7,
+      "title": "First YouTube publication",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Publish an approved short to YouTube.",
+      "deliverables": [
+        "Optional YouTube account authorization and publishing integration",
+        "Explicit review and approval before external publication",
+        "Record publication result and remote video reference"
+      ],
+      "milestone": "First Public Upload"
+    },
+    {
+      "phase": 8,
+      "title": "First TikTok publication",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Publish an approved short to TikTok.",
+      "deliverables": [
+        "Optional TikTok account authorization and publishing integration",
+        "Platform-compatible short metadata and upload flow",
+        "Record publication result and remote post reference"
+      ],
+      "milestone": "First TikTok Short"
+    },
+    {
+      "phase": 9,
+      "title": "First Instagram Reel",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Publish an approved short to Instagram Reels.",
+      "deliverables": [
+        "Optional Instagram account authorization and publishing integration",
+        "Platform-compatible reel metadata and upload flow",
+        "Record publication result and remote reel reference"
+      ],
+      "milestone": "First Multi-Platform Post"
+    },
+    {
+      "phase": 10,
+      "title": "Autonomous content factory",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Coordinate content production through local agent-driven workflows.",
+      "deliverables": [
+        "Automate repeatable production steps with observable, recoverable workflows",
+        "Keep human approval at configured review and publishing boundaries",
+        "Integrate future MCP and Hermes agent surfaces where appropriate"
+      ]
+    },
+    {
+      "phase": 11,
+      "title": "First dollar earned",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Validate a real monetization path.",
+      "deliverables": [
+        "Define a measurable revenue experiment",
+        "Record attributable revenue and operating costs"
+      ]
+    },
+    {
+      "phase": 12,
+      "title": "First $100",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Validate repeatable early revenue.",
+      "deliverables": [
+        "Reach $100 in tracked revenue",
+        "Document repeatability and associated operating costs"
+      ]
+    },
+    {
+      "phase": 13,
+      "title": "First $1,000",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Prove commercial viability with sustained results.",
+      "deliverables": [
+        "Reach $1,000 in tracked revenue",
+        "Measure repeatability, platform performance, and operating costs"
+      ]
+    },
+    {
+      "phase": 14,
+      "title": "Open-source community release",
+      "status": "upcoming",
+      "timing": "Future · unscheduled",
+      "objective": "Launch a usable, documented release for the wider community.",
+      "deliverables": [
+        "Publish contributor, security, and deployment documentation",
+        "Provide a tested release process and supported setup guidance",
+        "Welcome community contributions and issue reports"
+      ],
+      "milestone": "Community Launch"
+    }
+  ]
+}
